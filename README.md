@@ -65,7 +65,7 @@ Installation
 To find installation instructions for your operating system (Linux, OSX, and Windows), please visit https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager#ubuntu-mint
 ### Leveldb
 Leveldb can be downloaded from https://code.google.com/p/leveldb/downloads/list. In addition,
-you will need to install levelup, which can be installed using 'npm install level'.
+you will need to install levelup, which can be installed using `npm install level`.
 
 ## Clone and Post-Clone Installation:
 - clone this repo
@@ -76,7 +76,3 @@ Testing experiments
 
 You can use `debug` as your workerId when testing live experiments to help make sure your data doesn't end up the experiment data.
 See [convert.js](https://github.com/codementum/experimentr/blob/master/analysis/src/convert.js#L24) for details.
-
-Another useful trick is to empty the redis database. To do so, run `redis-cli` to get the redis command line prompt, then type `FLUSHDB` to delete all current keys.
-
-More redis commands can be found at [http://redis.io/commands](http://redis.io/commands).
