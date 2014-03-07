@@ -14,6 +14,7 @@ var express     = require('express')
 // Database setup
 leveldb = levelup('./lexperimentrdb')
 console.log("Creating levelup database.")
+console.log(leveldb.get('hshrokd0', function( err ) {}))
 
 
 //redisClient.on('connect', function() {

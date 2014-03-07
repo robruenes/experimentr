@@ -3,7 +3,7 @@ lexperimentr
 
 Experimentr is a hosting/data-collection backend and module-based frontend for web-based visualization studies. 
 
-lexperimentr is a version of experimentr that uses leveldb as opposed to redis.
+lexperimentr is a version of experimentr that uses leveldb instead of redis.
 
 This repo is a working experiment. The best way to get started is to copy this repo and edit it for your experiment.
 
@@ -52,10 +52,6 @@ Module re-use will be added in a later release.
 Running the server
 --------
 
-Start redis: 
-
-    redis-server redis.conf
-
 Run the server:
 
     node app.js
@@ -67,9 +63,9 @@ Installation
 ## Before-Clone Installation Dependencies:
 ### Node.js
 To find installation instructions for your operating system (Linux, OSX, and Windows), please visit https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager#ubuntu-mint
-### Redis
-**Note:** Redis is _not_ installed through `npm install` and must be installed separately.
-Redis can be manually downloaded at redis.io/download. Please note that Windows is not directly supported, however there is an experimental Windows port maintained by Microsoft. If you are on OSX and have `brew` installed, you can install Redis with the following: `brew install redis`.
+### Leveldb
+Leveldb can be downloaded from https://code.google.com/p/leveldb/downloads/list. In addition,
+you will need to install levelup, which can be installed using 'npm install level'.
 
 ## Clone and Post-Clone Installation:
 - clone this repo
