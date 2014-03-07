@@ -1,7 +1,9 @@
-experimentr
+lexperimentr
 ========
 
 Experimentr is a hosting/data-collection backend and module-based frontend for web-based visualization studies. 
+
+lexperimentr is a version of experimentr that uses leveldb as opposed to redis.
 
 This repo is a working experiment. The best way to get started is to copy this repo and edit it for your experiment.
 

@@ -5,24 +5,29 @@
 
 var express     = require('express')
   , http        = require('http')
-  , redis       = require('redis')
-  , redisClient
+  , levelup     = require('level')
+  , leveldb
   , port        = process.argv[2] || 8000
   , rport       = process.argv[3] || 6379
   , debug       = process.argv[4] || null
 
 // Database setup
-redisClient = redis.createClient(rport)
+leveldb = levelup('./lexperimentrdb')
+console.log("Creating levelup database.")
 
-redisClient.on('connect', function() {
-  console.log('Connected to redis.')
-})
+
+//redisClient.on('connect', function() {
+//  console.log('Connected to redis.')
+//})
 
 // Data handling
 var save = function save(d) {
-  redisClient.hmset(d.postId, d)
-  if( debug )
-    console.log('saved to redis: ' + d.postId +', at: '+ (new Date()).toString())
+  leveldb.put(d.postId, d)
+  if ( debug )
+    console.log('saved to leveldb: ' + d.postId + ', at: ' + (new Date()).toString())
+  //redisClient.hmset(d.postId, d)
+  //if( debug )
+    //console.log('saved to redis: ' + d.postId +', at: '+ (new Date()).toString())
 }
 
 // Server setup
